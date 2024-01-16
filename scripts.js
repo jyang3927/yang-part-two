@@ -12,10 +12,14 @@ let numOfHoles = Number(prompt(`Hi ${name}! Would you like to play 3 or 6 holes?
 
 if (numOfHoles === 3) {
     for (let i = 1; i < numOfHoles + 1; i++){
-        //prompt user for number of putts 
+        //prompt user for number of putts
         putts = Number(prompt(`How many putts for hole ${i}`)); 
+        while (putts < 1) {
+            alert("Invalid Number. Try again");
+            putts = Number(prompt(`How many putts for hole ${i}`)); 
+        }
         //get cumulative score of user 
-        totalPutts += putts; 
+        totalPutts += putts;  
     }
     let finalScore = Math.abs(threeHolePar - totalPutts); 
     if (totalPutts < threeHolePar)
@@ -34,8 +38,13 @@ else if (numOfHoles === 6) {
     for (let i = 1; i < numOfHoles + 1; i++){
         //prompt user for number of putts 
         putts = Number(prompt(`How many putts for hole ${i}`)); 
+
+        while (putts < 1) {
+            alert("Invalid Number. Try again");
+            putts = Number(prompt(`How many putts for hole ${i}`)); 
+        }
         //get cumulative score of user 
-        totalPutts += putts; 
+        totalPutts += putts;  
     }
     let finalScore = Math.abs(sixHolePar - totalPutts); 
     if (totalPutts < sixHolePar)
